@@ -1,6 +1,7 @@
 # react-micro-frontend
-This is a proof of concept that demonstrates using React micro-frontend templates that support hot loading React micro-apps and components based on a users route. The POC renders a mock video site that allow users to search for movies and view their details.
+This is a proof of concept that demonstrates using React micro-frontend templates that support hot loading React micro-apps and components based on a users route. The orchistration of injected micro-apps and components is completely dynamic and controlled by a site level configuration. 
 
+The POC renders a mock video site that allow users to search for movies and view their details.
 ![alt text](https://github.com/eschall/react-micro-frontend/blob/master/documentation/images/react-micro-frontend-poc.png)
 
 ## Installation
