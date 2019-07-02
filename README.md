@@ -7,13 +7,26 @@ There are three React applications used by this POC. You will need to browse to 
 
 To get started, clone the repo and run npm install to setup the dependencies. Then run npm start to launch the application.
 
+### `redbox-details`
 ```
-cd host-app
-npm i
-
 cd micro-apps/redbox-details
 npm i
 
 cd micro-apps/redbox-search
 npm i
+npm run build
+```
+
+### `redbox-search`
+```
+cd micro-apps/redbox-search
+npm i
+npm run build
+```
+
+### `host-app`
+```
+cd host-app
+npm i
+npm start
 ```
