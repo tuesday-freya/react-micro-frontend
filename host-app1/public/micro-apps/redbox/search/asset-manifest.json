@@ -1,0 +1,7 @@
+{
+  "main.js": "/static/js/redbox-search-micro-app.js",
+  "main.js.map": "/static/js/redbox-search-micro-app.js.map",
+  "index.html": "/index.html",
+  "precache-manifest.c55c5c8eec46b501ddf768b22de34a58.js": "/precache-manifest.c55c5c8eec46b501ddf768b22de34a58.js",
+  "service-worker.js": "/service-worker.js"
+}
