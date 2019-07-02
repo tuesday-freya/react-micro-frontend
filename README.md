@@ -1,7 +1,7 @@
 # react-micro-frontend
 React micro-frontend templates that support hot loading React micro-apps and components based on a users route.
 
-### Getting Started
+## Getting Started
 
 There are three React applications used by this POC. You will need to browse to each applications directory and run the install command.
 
