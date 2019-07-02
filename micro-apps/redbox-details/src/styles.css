@@ -1,0 +1,28 @@
+.counter{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 150px;
+    font-size: 1.2rem;
+    box-shadow: 0 0 5px 3px #c7c7c7;
+    padding: 40px;
+}
+
+.counter .title{
+    margin: 0 0 15px 0;
+}
+
+.counter .buttons{
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+.counter .buttons button{
+    flex: 1; 
+}
+
+.counter .buttons .count{
+    flex: 1;
+    text-align: center;
+}
