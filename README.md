@@ -5,7 +5,7 @@ This is a proof of concept that demonstrates using React micro-frontend template
 
 ## Installation
 
-There are three React applications used by this POC. There is a details application (redbox-details) that retrieves and displays a movies information and a search application (redbox-search) that retrieves a list of movies based on a search term. Finally there is the host-app that you guessed it, hosts the micro-apps.
+There are three React applications used by this POC. There is a search application (redbox-search) that retrieves a list of movies based on a provided search term and a details application (redbox-details) that retrieves and displays a movies information by id. Finally there is the host-app that you guessed it, hosts the micro-apps.
 
 To get started, clone the repo and run the following commands. It is important to follow the order as outlined below to ensure the micro-apps have been properly built before launching the host application.
 
