@@ -3,7 +3,7 @@ This is a proof of concept that demonstrates using React micro-frontend template
 
 ![alt text](https://github.com/eschall/react-micro-frontend/blob/master/documentation/images/react-micro-frontend-poc.png)
 
-## Getting Started
+## Installation
 
 There are three React applications used by this POC. You will need to browse to each applications directory and run the install command.
 
