@@ -1,6 +1,6 @@
 self.__precacheManifest = [
   {
-    "revision": "165e65352489576d7967",
+    "revision": "f170502303a9f37f3337",
     "url": "/static/js/redbox-details-micro-app.js"
   },
   {
