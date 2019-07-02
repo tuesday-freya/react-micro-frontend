@@ -13,9 +13,6 @@ To get started, clone the repo and run the following commands. It is important t
 ```
 cd micro-apps/redbox-details
 npm i
-
-cd micro-apps/redbox-search
-npm i
 npm run build
 ```
 
