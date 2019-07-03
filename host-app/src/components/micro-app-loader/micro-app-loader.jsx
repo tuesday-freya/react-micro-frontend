@@ -16,10 +16,10 @@ class MicroAppLoader extends PureComponent {
         // Check to see if bundle for this micro-app has already been injected.
         if(window.loadedScripts !== undefined) {
 
-            if(window[this.props.config.name] !== undefined && window.loadedScripts.indexOf(this.props.config.plugin) > -1) {
+            if(window[this.props.config.plugin.name] !== undefined && window.loadedScripts.indexOf(this.props.config.plugin.path) > -1) {
 
                 // Render the micro app with props.
-                window[this.props.config.name].mount(this.props, this.placeholder.current);
+                window[this.props.config.plugin.name].mount(this.props, this.placeholder.current);
             }
         }
     }
@@ -29,22 +29,22 @@ class MicroAppLoader extends PureComponent {
         if(prevProps !== this.props){
 
             // Update the micro app with new props.
-            window[this.props.config.name].mount(this.props, this.placeholder.current);
+            window[this.props.config.plugin.name].mount(this.props, this.placeholder.current);
         }
     }
 
     componentWillUnmount(){
 
         // Destroy the micro app.
-        window[this.props.config.name].unmount(this.placeholder.current);
+        window[this.props.config.plugin.name].unmount(this.placeholder.current);
     }
 
     handleScriptCreate() {
-        console.log(`script ${this.props.config.plugin} created`)
+        console.log(`script ${this.props.config.plugin.path} created`)
       }
 
       handleScriptError() {
-        console.log(`script ${this.props.config.plugin} failed to load`)
+        console.log(`script ${this.props.config.plugin.path} failed to load`)
       }
        
       handleScriptLoad() {
@@ -57,15 +57,15 @@ class MicroAppLoader extends PureComponent {
         // Add the new script to the collection.
         window.loadedScripts.push(this.props.config.plugin);
 
-        console.log(`script ${this.props.config.plugin} loaded`)
+        console.log(`script ${this.props.config.plugin.path} loaded`)
 
-        if (window[this.props.config.name] !== undefined) {
+        if (window[this.props.config.plugin.name] !== undefined) {
 
             // Render the micro app with props.
-            window[this.props.config.name].mount(this.props, this.placeholder.current);
+            window[this.props.config.plugin.name].mount(this.props, this.placeholder.current);
         } else {
 
-            throw Error(`Unable to mount micro-app ${this.props.config.name}, window.${this.props.config.name} is not defined`)
+            throw Error(`Unable to mount micro-app ${this.props.config.plugin.name}, window.${this.props.config.plugin.name} is not defined`)
         }
       }
 
@@ -74,8 +74,8 @@ class MicroAppLoader extends PureComponent {
         let script;
 
         // Inject the bundle with a script tag.
-        if(window.loadedScripts === undefined || window.loadedScripts.indexOf(this.props.config.plugin) === -1) {
-            script = <Script url={this.props.config.plugin}
+        if(window.loadedScripts === undefined || window.loadedScripts.indexOf(this.props.config.plugin.path) === -1) {
+            script = <Script url={this.props.config.plugin.path}
                              onCreate={this.handleScriptCreate.bind(this)}
                              onError={this.handleScriptError.bind(this)}
                              onLoad={this.handleScriptLoad.bind(this)} />
