@@ -14,9 +14,9 @@ class ZoneComponent extends Component{
 
         const { config } = this.props;
 
-        if(config != null) {
+        if(config != null && config.plugin != null) {
 
-            Component = universal(import(`../../${config.plugin}`));
+            Component = universal(import(`../../${config.plugin.path}`));
 
             return <Component {...this.props} {...config.props} config={config}/>
         }

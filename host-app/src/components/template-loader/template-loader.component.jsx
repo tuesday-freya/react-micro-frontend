@@ -19,45 +19,45 @@ class TemplateLoaderComponent extends Component{
         var productLineName = params.productLine;
 
         // Retrieve the name of the template from the route. 
-        var templateName = params.page === undefined ? 'default' : params.page;
+        var template = params.page === undefined ? 'default' : params.page;
 
         // Lookup the template configuration in redux.
         // 
         // Zone is an optional value that may be present in props. Zone is used to 
         // identify the location (zone) within a template that will recieve the hot loaded
         // component or micro-app. When loading the root page, zone will not be present.
-        var templateConfig = this.templateConfig(templateName, productLineName, zone);
+        var config = this.templateConfig(template, productLineName, zone);
 
         let Placeholder;
 
-        if(templateConfig.isMicroApp) {
+        if(config.plugin.isMicroApp) {
 
             // Hot load the micro-app into the placeholder.
-            Placeholder = <MicroAppLoader {...this.props} config={templateConfig} />
+            Placeholder = <MicroAppLoader {...this.props} config={config} />
         } else{
 
             // Hot load the component into the placeholder.
-            Placeholder = <Zone {...this.props} config={templateConfig} />
+            Placeholder = <Zone {...this.props} config={config} />
         }
 
         return Placeholder;
     }
 
-    templateConfig(pageType, productLineName, zone) {
+    templateConfig(alias, productLine, zone) {
 
-        // Attempt the retrieve the templates configuration by product line and page name.
-        var config = this.props.siteTemplates.templates.find(page => { return page.productLine === productLineName && page.type === pageType });
+        // Attempt the retrieve the configuration by product line and id.
+        var config = this.props.siteTemplates.templates.find(template => { return template.productLine === productLine && template.alias === alias });
 
         if (config === undefined) {
 
-            // Attempt to retrieve the templates configuration by page name.
-            config = this.props.siteTemplates.templates.find(page => { return page.productLine === undefined && page.type === pageType });
+            // Attempt to retrieve the configuration by id.
+            config = this.props.siteTemplates.templates.find(template => { return template.productLine === undefined && template.alias === alias });
         }
 
         if( zone !== null) {
 
-            // Retrieve the templates configuration from the page zones.
-            config = config.zones.find(obj => { return obj.zone === zone });
+            // Retrieve the configuration from the template zones.
+            config = config.zones.find(obj => { return obj.alias === zone });
         } 
 
         return config;
