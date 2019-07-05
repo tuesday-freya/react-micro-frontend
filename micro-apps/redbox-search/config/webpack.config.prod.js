@@ -130,6 +130,10 @@ module.exports = {
         .relative(paths.appSrc, info.absoluteResourcePath)
         .replace(/\\/g, '/'),
   },
+  externals: {
+    'react': 'React',
+    'react-dom': 'ReactDOM'
+  },
   optimization: {
     minimizer: [
       new TerserPlugin({

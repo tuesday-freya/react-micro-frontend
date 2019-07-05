@@ -12,6 +12,9 @@ import store from './redux/store'
 // // Log the initial state
 // console.log(store.getState())
   
+window.React = React;
+window.ReactDOM = ReactDOM;
+
 // // Every time the state changes, log it
 // // Note that subscribe() returns a function for unregistering the listener
 // const unsubscribe = store.subscribe(() => console.log(store.getState()))
