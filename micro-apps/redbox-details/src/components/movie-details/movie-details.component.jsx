@@ -27,7 +27,7 @@ class MovieDetailsComponent extends Component {
 
       if(selectedVideo !== undefined && selectedVideo !== null) {
 
-        axios.get(`http://www.omdbapi.com/?apikey=81fbe921&type=movie&i=${selectedVideo.imdbID}`)
+        axios.get(`https://www.omdbapi.com/?apikey=81fbe921&type=movie&i=${selectedVideo.imdbID}`)
           .then(res => {
             const movie = res.data;
             this.setState({ movie });

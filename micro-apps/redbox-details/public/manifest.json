@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Details MicroApp",
+  "name": "Displays details from a movie",
   "icons": [
     {
       "src": "favicon.ico",
