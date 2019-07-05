@@ -5,6 +5,13 @@ The POC renders a mock video site that allow users to search for movies and view
 
 ![alt text](https://github.com/eschall/react-micro-frontend/blob/master/documentation/images/react-micro-frontend-poc.png)
 
+## Demo
+
+Checkout out the live demo on [Netlify](https://www.netlify.com/)
+
+**Host**: https://micro-app-host.netlify.com/
+**MicroApp Marketplace**: https://micro-app-marketplace.netlify.com/
+
 ## Installation
 
 There are three React applications used by this POC. There is a search application (redbox-search) that retrieves a list of movies based on a provided search term and a details application (redbox-details) that retrieves and displays a movies information by id. Finally there is the host-app that you guessed it, hosts the micro-apps.
