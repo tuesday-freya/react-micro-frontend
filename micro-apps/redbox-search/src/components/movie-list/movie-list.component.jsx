@@ -27,7 +27,7 @@ class MovieListComponent extends Component {
 
     if ( searchTerm !== undefined && searchTerm !== null) {
 
-      axios.get(`http://www.omdbapi.com/?apikey=81fbe921&type=movie&s=${searchTerm}`)
+      axios.get(`https://www.omdbapi.com/?apikey=81fbe921&type=movie&s=${searchTerm}`)
           .then(res => {
             const movies = res.data;
             this.setState({ movies });
