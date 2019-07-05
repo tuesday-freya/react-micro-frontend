@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>MicroApps Marketplace</title>
+    <script type="module">
+      import {
+        html,
+        Component,
+        render
+      } from "https://unpkg.com/htm/preact/standalone.mjs";
+      // define microapps (manifests)
+      const microapps = [
+        {
+          asset:
+            "content/micro-apps/details/asset-manifest.json",
+          manifest:
+            "content/micro-apps/details/manifest.json"
+        },
+        {
+          asset:
+            "content/micro-apps/search/asset-manifest.json",
+          manifest:
+            "content/micro-apps/search/manifest.json"
+        }
+      ];
+
+      (async () => {
+        // fetch the manifest info about the microapps
+        const request = async (url1, url2) => {
+          const r1 = await fetch(url1);
+          const json1 = await r1.json();
+
+          const r2 = await fetch(url2);
+          const json2 = await r2.json();
+
+          return {
+            ...json1,
+            assets: {
+              ...json2
+            }
+          };
+        };
+
+        const fetchData = async microapps => {
+          const manifests = [];
+
+          // get data from manifests
+          for await (let data of microapps) {
+            const manifest = await request(data.manifest, data.asset);
+
+            manifests.push(manifest);
+          }
+
+          return manifests;
+        };
+
+        // const manifests = await fetchData(microapps);
+        // console.log({ manifests });
+
+        // display
+        class App extends Component {
+          constructor(props) {
+            super(props);
+            this.state = {
+              manifests: [],
+              loading: true
+            };
+          }
+          componentDidMount() {
+            fetchData(this.props.microapps)
+              .then(manifests => {
+                this.setState({ manifests, loading: false });
+              })
+              .catch(() => {
+                this.setState({ loading: false });
+              });
+          }
+
+          render(props) {
+            return html`
+              <div>
+                <${Header} />
+                ${this.state.loading
+                  ? html`
+                      <p>Loading</p>
+                    `
+                  : html`
+                      <ul>
+                        ${this.state.manifests.map(
+                          microAppData =>
+                            html`
+                              <li>
+                                <h3>${microAppData.short_name}</h3>
+                                <p>${microAppData.name}</p>
+                                <p>Latest: ${microAppData.assets["main.js"]}</p>
+                              </li>
+                            `
+                        )}
+                      </ul>
+                    `}
+              </div>
+            `;
+          }
+        }
+
+        const Header = () =>
+          html`
+            <div class="header">
+              <h1>MicroApps Marketplace</h1>
+              <p>Create websites faster</p>
+            </div>
+          `;
+
+        render(
+          html`
+            <${App} microapps=${microapps} />
+          `,
+          document.body
+        );
+      })();
+    </script>
+  </head>
+  <body></body>
+</html>
