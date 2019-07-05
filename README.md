@@ -10,6 +10,7 @@ The POC renders a mock video site that allow users to search for movies and view
 Checkout out the live demo on [Netlify](https://www.netlify.com/)
 
 **Host**: https://micro-app-host.netlify.com/
+
 **MicroApp Marketplace**: https://micro-app-marketplace.netlify.com/
 
 ## Installation
@@ -19,21 +20,21 @@ There are three React applications used by this POC. There is a search applicati
 To get started, clone the repo and run the following commands. It is important to follow the order as outlined below to ensure the micro-apps have been properly built before launching the host application.
 
 ### `redbox-details`
-```
+```shell
 cd micro-apps/redbox-details
 npm i
 npm run build
 ```
 
 ### `redbox-search`
-```
+```shell
 cd micro-apps/redbox-search
 npm i
 npm run build
 ```
 
 ### `host-app`
-```
+```shell
 cd host-app
 npm i
 npm start
