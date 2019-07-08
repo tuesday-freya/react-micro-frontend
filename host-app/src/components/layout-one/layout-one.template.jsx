@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-// import logo from '../../logo.svg';
 import { object } from 'prop-types'
-// import './App.css';
 
 import MovieListZone from '../movie-list/movie-list.component';
 import MovieDetailsZone from '../movie-details/movie-details.component';
@@ -28,25 +26,27 @@ class LayoutOneTemplate extends Component {
     return (
 
       <div>
-        <div style={{display: 'flex', flexDirection: 'column', height: '100%'}}>
+        <div className='layout-one'>
 
-          <div style={{borderStyle: 'solid', borderWidth: '1px', borderColor: '#ccc', height: '160px', display: 'flex', flexDirection: 'column', backgroundColor: '#fff', alignItems: 'center'}}>
-            <div style={{display: 'flex', flex: '1 1 auto', flexDirection: 'column', alignSelf: 'center', width: '100%', maxWidth: '1200px', backgroundImage: `url(${'/images/redbox.jpeg'}`, backgroundRepeat: 'no-repeat'}}>
+          <div className='layout-one-header'>
+            
+            <div className='layout-one-header-body' style={{backgroundImage: `url(${'/images/redbox.jpeg'}`}}>
 
-            <div style={{display: 'flex', flex: '1 1 auto', flexDirection: 'row', alignSelf: 'center', width: 'auto'}}>
-              <input style={{alignSelf: 'center', height: '30px', borderRadius: '15px', borderStyle: 'solid', borderWidth: '1px', borderColor: '#ccc', padding: '6px', outline: 'none', paddingLeft: '20px', paddingRight: '20px'}} value={searchTerm} placeholder='Search movie title...' onChange={this.onSearchTermChange}/>  
+            <div className='movie-search-container'>
+              <input className='movie-search-field' value={searchTerm} placeholder='Search movie title...' onChange={this.onSearchTermChange}/>  
             </div>
 
             </div>
+            
           </div>
 
-          <div style={{display: 'flex', flexDirection: 'column', height: '100%', padding: '30px', color: '#fff'}}>
+          <div className='movie-container'>
 
-            <div style={{display: 'flex', flex: '1 1', marginBottom: '30px'}}>
+            <div className='movie-details-zone'>
               <MovieDetailsZone {...this.props} selectedVideo={selectedVideo}/>
             </div>
 
-            <div style={{display: 'flex', flex: '0 1 auto', height: '300px'}}>
+            <div className='movie-list-zone'>
               <MovieListZone {...this.props} search={searchTerm} onSelectionChange={this.onSelectionChange}/>
             </div>
 

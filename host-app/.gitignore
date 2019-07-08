@@ -10,6 +10,7 @@
 
 # production
 /build
+/public/micro-apps
 
 # misc
 .DS_Store
