@@ -1,3 +1,13 @@
+# Honeycomb Studio
+This micro app proof of concept has evolved into Honeycomb Studio, a low code platform that is under development. The platform utilizes micro apps provided by the platform and/or micro apps provided by the community to allow users to generate web applications without writing code.
+
+[Getting Started Tutorial: How to create a Honeycomb Application](
+https://github.com/Schalltech/honeycomb-tutorials/blob/master/tutorials/getting%20started/create%20an%20application/README.md)
+
+#### Deadbox
+A port of the movie store from the react-micro-frontend repo.
+https://microapp.host/deadpool/deadbox
+
 # react-micro-frontend
 This is a proof of concept that demonstrates using React micro-frontend templates that support hot loading React micro-apps and components based on a users route. The orchestration of injected micro-apps and components is completely dynamic and controlled by a site level configuration. 
 
