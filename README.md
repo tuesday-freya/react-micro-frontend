@@ -1,5 +1,5 @@
 # Honeycomb Studio
-This micro app proof of concept has evolved into Honeycomb Studio, a low code platform that is under development. The platform utilizes micro apps provided by the platform and/or micro apps provided by the community to allow users to generate web applications without writing code.
+This micro app proof of concept has evolved into Honeycomb Studio ([microapp.studio](https://microapp.studio)), a low code platform that is under development. The platform utilizes micro apps provided by the platform and/or micro apps provided by the community to allow users to generate web applications without writing code.
 
 [Getting Started Tutorial: How to create a Honeycomb Application](
 https://github.com/Schalltech/honeycomb-tutorials/blob/master/tutorials/getting%20started/create%20an%20application/README.md)
