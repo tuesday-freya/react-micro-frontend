@@ -1,11 +1,5 @@
-# Honeycomb PaaS
-This micro app proof of concept has evolved into [Honeycomb](https://microapp.studio), a [PaaS](https://en.wikipedia.org/wiki/Platform_as_a_service) that is under development. With Honeycomb, developers are able to extend the functionality of their React based web applications with micro apps at runtime. Honeycomb also supports building and hosting web applications entirely with micro apps that are available from the [marketplace](https://microapp.market) or custom built using the Honeycomb CLI.
-
-* [Honeycomb Studio](https://microapp.studio)
-* [Honeycomb Marketplace](https://microapp.market)
-* [Marketplace Repository](https://github.com/Schalltech/honeycomb-marketplace)
-* [Getting Started Tutorial: How to create a Honeycomb Application](
-https://github.com/Schalltech/honeycomb-tutorials/blob/master/tutorials/getting%20started/create%20an%20application/README.md)
+# This repository has moved to the link below.
+[Micro App Repository](https://github.com/Schalltech/honeycomb-marketplace)
 
 
 # react-micro-frontend
