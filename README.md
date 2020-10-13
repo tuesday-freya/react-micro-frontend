@@ -1,6 +1,7 @@
 # This repository has moved to the link below.
 [Micro App Repository](https://github.com/Schalltech/honeycomb-marketplace)
 
+[redbox demo](https://microapp.host/beekeeper/redboxdemo)
 
 # react-micro-frontend
 This is a proof of concept that demonstrates using React micro-frontend templates that support hot loading React micro-apps and components based on a users route. The orchestration of injected micro-apps and components is completely dynamic and controlled by a site level configuration. 
